@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import Movie from "./Movie";
+import "./app.css";
 
 class App extends React.Component {
   state = {
@@ -29,7 +30,7 @@ class App extends React.Component {
     return (
       <section className="container">
         {isLoading ? ( // componentDidMount를 다 처리할 때 까지 삼항연산자로 Loading을 화면에 보여줌 * lifecycle : render -> componentDidMount
-          <div>Loading...</div>
+          <div className="loading">Loading...</div>
         ) : (
           <div className="movies">
             {movies.map(movie => (
