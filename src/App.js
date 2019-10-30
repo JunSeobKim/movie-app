@@ -27,11 +27,11 @@ class App extends React.Component {
   render() {
     const { isLoading, movies } = this.state;
     return (
-      <section class="container">
+      <section className="container">
         {isLoading ? ( // componentDidMount를 다 처리할 때 까지 삼항연산자로 Loading을 화면에 보여줌 * lifecycle : render -> componentDidMount
           <div>Loading...</div>
         ) : (
-          <div class="movies">
+          <div className="movies">
             {movies.map(movie => (
               <Movie
                 key={movie.id}
@@ -39,7 +39,8 @@ class App extends React.Component {
                 year={movie.year}
                 title={movie.title}
                 summary={movie.summary}
-                poster={movie.medium_cover_image} // Movie.js의 틀을 사용해 값을 나타낸다.
+                poster={movie.medium_cover_image}
+                genres={movie.genres} // Movie.js의 틀을 사용해 값을 나타낸다.
               />
             ))}
           </div>
